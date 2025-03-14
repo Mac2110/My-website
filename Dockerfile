@@ -1,5 +1,4 @@
-FROM ubuntu
-RUN apt-get update
-RUN apt install apache2 -y
-ADD index.html /var/www/html/
-ENTRYPOINT apachectl -D FOREGROUND
+FROM httpd:2.4
+COPY . /usr/local/apache2/htdocs/
+EXPOSE 80
+
