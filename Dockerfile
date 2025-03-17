@@ -1,4 +1,7 @@
-FROM httpd:2.4
-COPY . /usr/local/apache2/htdocs/
+FROM node:14-alpine
+WORKDIR /app
+COPY . .
+RUN npm install
 EXPOSE 80
+CMD ["npm", "start"]
 
